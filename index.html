@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ПП-21 Гнатецький Лабораторна робота 12.4</title>
+</head>	 
+<body>
+<script>  
+"use strict";
+
+document.write("<h2 style='text-align:center'>Лабораторна робота 12.4</h2>");
+
+let x = parseInt(prompt("Введіть число x"));
+let y = parseInt(prompt("Введіть ступінь y"));
+let z = x;
+
+document.write("<p>Використання циклу <b>FOR</b> для зведення в ступінь</p>");
+for (let i = 2; i <= Math.abs(y); i++) {
+    z *= x;
+}
+z = y > 0 ? z : 1 / z;
+document.write("Число ", x, " у ступені ", y, " дорівнює ", z, "<br>");
+
+document.write("<p>Використання циклу <b>WHILE</b> для підрахунку кількості цифр у числі</p>");
+let num = Math.abs(x); // Перетворення на позитивне число
+let digitCount = 0;
+while (num >= 1) {
+    num = Math.floor(num / 10);
+    digitCount++;
+}
+document.write("Кількість цифр у числі ", x, " дорівнює ", digitCount, "<br>");
+
+document.write("<p>Використання циклу <b>DO WHILE</b> для обчислення факторіалу</p>");
+let factorial = 1;
+let n = Math.abs(x);
+let counter = 1;
+do {
+    factorial *= counter;
+    counter++;
+} while (counter <= n);
+document.write("Факторіал числа ", x, " дорівнює ", factorial, "<br>");
+
+</script>
+</body>
+</html>
